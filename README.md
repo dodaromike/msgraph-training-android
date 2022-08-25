@@ -1,28 +1,58 @@
+---
+page_type: sample
+description: This sample demonstrates how to use the Microsoft Graph Java SDK to access data in Office 365 from native mobile Android applications.
+products:
+- ms-graph
+- microsoft-graph-calendar-api
+- office-exchange-online
+languages:
+- java
+---
+
 # Microsoft Graph sample Android app
 
 This sample demonstrates how to use the Microsoft Graph Java SDK to access data in Office 365 from native mobile Android applications.
 
-> **NOTE:** This sample was originally built from a tutorial published on the [Microsoft Graph tutorials](https://docs.microsoft.com/graph/tutorials) page. That tutorial has been removed.
+## Prerequisites
 
-## Running the sample
+Before you start this tutorial, you should have [Android Studio](https://developer.android.com/studio/) installed on your development machine.
 
-The code for this sample is in the [demo](demo) folder. Instructions to configure and run the sample can be found in the [README](demo/README.md) in that folder.
+You should also have either a personal Microsoft account with a mailbox on Outlook.com, or a Microsoft work or school account. If you don't have a Microsoft account, there are a couple of options to get a free account:
 
-## Version history
+- You can [sign up for a new personal Microsoft account](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=12&ct=1454618383&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https://mail.live.com/default.aspx&id=64855&cbcxt=mai&bk=1454618383&uiflavor=web&uaid=b213a65b4fdc484382b6622b3ecaa547&mkt=E-US&lc=1033&lic=1).
+- You can [sign up for the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program) to get a free Microsoft 365 subscription.
 
-| Version | Date               | Comments                                                                   |
-| ------- | ------------------ | -------------------------------------------------------------------------- |
-| 1.10    | April 3, 2020      | Recreated project with latest Android SDK, MSAL, Graph SDK                 |
-| 1.9     | November 13, 2019  | Recreated project with androidx artifacts and latest Android SDK, MSAL, Graph SDK |
-| 1.8     | June 18, 2019      | Updated readme to refreshed screencast recording                           |
-| 1.7     | March 30, 2019     | FY2019Q4 content refresh                                                   |
-| 1.6     | February 20, 2019  | Updated to docs.microsoft.com format                                       |
-| 1.5     | February 12, 2019  | Updated multiple dependencies applied quarterly refresh                    |
-| 1.4     | November 8, 2018   | Updated Graph Java SDK to GA v1 & applied quarterly refresh                |
-| 1.3     | September 12, 2018 | Replaced Graph Android SDK with Graph Java SDK & applied quarterly refresh |
-| 1.2     | June 28, 2018      | Added screencast.                                                          |
-| 1.1     | June 22, 2018      | Rewritten to use latest guidance.                                          |
-| 1.0     | ~November 24, 2017 | Add Microsoft Graph related product breakouts.                             |
+## Install dependencies
+
+Before moving on, install some additional dependencies that you will use later.
+
+- `com.google.android.material:material` to make the [navigation view](https://material.io/develop/android/components/navigation-view/) available to the app.
+- [Microsoft Authentication Library (MSAL) for Android](https://github.com/AzureAD/microsoft-authentication-library-for-android) to handle Azure AD authentication and token management.
+- [Microsoft Graph SDK for Java](https://github.com/microsoftgraph/msgraph-sdk-java) for making calls to the Microsoft Graph.
+
+1. Expand **Gradle Scripts**, then open **build.gradle (Module: Graph_Tutorial.app)**.
+
+1. Add the following lines inside the `dependencies` value.
+
+    :::code language="gradle" source="../demo/GraphTutorial/app/build.gradle" id="DependenciesSnippet":::
+
+1. Add a `packagingOptions` value inside the `android` value in **build.gradle (Module: Graph_Tutorial.app)**.
+
+    ```Gradle
+    packagingOptions {
+        pickFirst 'META-INF/*'
+    }
+    ```
+
+1. Add the Azure Maven repository for the MicrosoftDeviceSDK library, a dependency of MSAL. Open **build.gradle (Project: Graph_Tutorial)**. Add the following to the `repositories` value inside the `allprojects` value.
+
+    ```Gradle
+    maven {
+        url 'https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1'
+    }
+    ```
+
+1. Save your changes. On the **File** menu, select **Sync Project with Gradle Files**.
 
 ## Code of conduct
 
