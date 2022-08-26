@@ -4,13 +4,14 @@ plugins {
     id 'com.android.library' version '7.2.2' apply false
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-repositories {
-    allprojects {
+allprojects {
+    repositories {
         maven {
             url 'https://pkgs.dev.azure.com/MicrosoftDeviceSDK/DuoSDK-Public/_packaging/Duo-SDK-Feed/maven/v1'
         }
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

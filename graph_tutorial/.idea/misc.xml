@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/v-dodaromike/ConvertSamples/android/msgraph-training-android/graph_tutorial/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/v-dodaromike/ConvertSamples/android/msgraph-training-android/graph_tutorial/app/src/main/res/layout/fagment_home.xml" value="0.1" />
+        <entry key="..\:/Users/v-dodaromike/ConvertSamples/android/msgraph-training-android/graph_tutorial/app/src/main/res/layout/fragment_calendar.xml" value="0.1" />
+        <entry key="..\:/Users/v-dodaromike/ConvertSamples/android/msgraph-training-android/graph_tutorial/app/src/main/res/layout/fragment_new_event.xml" value="0.1" />
+        <entry key="..\:/Users/v-dodaromike/ConvertSamples/android/msgraph-training-android/graph_tutorial/app/src/main/res/layout/nav_header.xml" value="0.1" />
+        <entry key="..\:/Users/v-dodaromike/ConvertSamples/android/msgraph-training-android/graph_tutorial/app/src/main/res/menu/drawer_menu.xml" value="0.10092592592592593" />
       </map>
     </option>
   </component>
